@@ -1,0 +1,1 @@
+"""SignSpeak source package."""

@@ -1,0 +1,14 @@
+You are helping build "SignSpeak", a real-time ASL translator. The source of truth is docs/PROJECT_SPEC.md. Read it before every task.
+
+Rules:
+- Implement only the milestone I name. Do not refactor or create files outside its scope.
+- Python 3.10/3.11, TensorFlow/Keras 3 (.keras format), MediaPipe pinned to 0.10.14 (classic mp.solutions API).
+- All hand cropping goes through src/preprocess.py HandCropper. All landmark features go through src/landmarks.py. Never duplicate this logic.
+- Models take raw 0-255 image input and normalize internally. Never normalize twice.
+- Never flip frames horizontally for processing. Mirror only visually in the frontend with CSS.
+- No horizontal-flip augmentation for images.
+- Label order must come from models/labels.json and src/config.py.
+- Frontend: Vite + React + TypeScript + Tailwind + Framer Motion. Function components and hooks. No class components. Dark glassmorphism style per spec section 11.
+- Keep functions small, typed, and documented. Add try/except around camera, socket, and model loading with clear error messages.
+- After writing code, tell me the exact command to run it and what I should see.
+- If something in the spec is ambiguous, pick the simplest option and tell me what you chose.

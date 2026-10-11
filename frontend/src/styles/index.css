@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #06080F;
+  color: #F8FAFC;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+}
+
+html:not(.dark) body {
+  background-color: #F8FAFC;
+  color: #0F172A;
+}
+
+/* Chic Frosted Glass Panels */
+.panel {
+  background: rgba(15, 21, 37, 0.72);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 1.5rem;
+  box-shadow: 0 12px 40px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.panel:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 16px 48px -12px rgba(0, 0, 0, 0.6), inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
+}
+
+html:not(.dark) .panel {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 32px -8px rgba(0, 0, 0, 0.08);
+}
+
+/* Glass Floating Pills */
+.chic-pill {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all 0.2s ease;
+}
+
+.chic-pill:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+html:not(.dark) .chic-pill {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.09);
+}
+
+/* Chic Refined Accent Gradient */
+.accent-text {
+  background: linear-gradient(135deg, #38BDF8 0%, #818CF8 50%, #C084FC 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.accent-glow {
+  box-shadow: 0 0 30px -5px rgba(56, 189, 248, 0.35);
+}
+
+/* Ambient Floating Glass Orbs */
+.bg-orb {
+  position: fixed;
+  width: 45vw;
+  height: 45vw;
+  filter: blur(140px);
+  opacity: 0.22;
+  pointer-events: none;
+  border-radius: 9999px;
+  animation: floatDrift 20s ease-in-out infinite alternate;
+}
+
+@keyframes floatDrift {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate(6%, 5%) rotate(180deg) scale(1.08);
+  }
+  100% {
+    transform: translate(-4%, 3%) rotate(360deg) scale(0.95);
+  }
+}
+
+/* Pinterest-Inspired Twilight Dusk Mesh Backdrop */
+.aurora-bg {
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(244, 114, 182, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 90% 15%, rgba(129, 140, 248, 0.20) 0%, transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(192, 132, 252, 0.16) 0%, transparent 50%),
+    radial-gradient(circle at 85% 85%, rgba(56, 189, 248, 0.14) 0%, transparent 40%),
+    #070A12;
+}
+
+html:not(.dark) .aurora-bg {
+  background: 
+    radial-gradient(circle at 15% 15%, rgba(244, 114, 182, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 85% 20%, rgba(129, 140, 248, 0.15) 0%, transparent 45%),
+    radial-gradient(circle at 50% 90%, rgba(56, 189, 248, 0.10) 0%, transparent 50%),
+    #F8FAFC;
+}
+
+/* Floating Showcase Canvas Frame */
+.showcase-canvas {
+  background: rgba(11, 15, 28, 0.78);
+  backdrop-filter: blur(36px);
+  -webkit-backdrop-filter: blur(36px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 2rem;
+  box-shadow: 
+    0 25px 70px -15px rgba(0, 0, 0, 0.7),
+    0 0 60px -10px rgba(129, 140, 248, 0.18),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
+}
+
+html:not(.dark) .showcase-canvas {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 
+    0 20px 50px -10px rgba(0, 0, 0, 0.08),
+    0 0 40px -10px rgba(129, 140, 248, 0.1);
+}
+
+/* Glowing Rim Highlight */
+.glow-rim {
+  position: relative;
+}
+.glow-rim::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(244, 114, 182, 0.4), rgba(129, 140, 248, 0.3), rgba(56, 189, 248, 0.4));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Laser Scanline for Webcam HUD */
+@keyframes scanline {
+  0% {
+    top: 0%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.8;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+.hud-scanline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.8), rgba(192, 132, 252, 0.8), transparent);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
+  animation: scanline 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Audio Soundwave Bars */
+@keyframes soundwave {
+  0%, 100% {
+    height: 4px;
+  }
+  50% {
+    height: 18px;
+  }
+}
+
+.soundwave-bar {
+  width: 3px;
+  background: #38BDF8;
+  border-radius: 9999px;
+  animation: soundwave 1s ease-in-out infinite;
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
