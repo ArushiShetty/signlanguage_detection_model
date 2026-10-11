@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import type { Mode } from "../lib/ws";
 
 type Props = {
@@ -31,7 +31,7 @@ export function Seg<T extends string>({
   options: { id: T; label: string }[];
   ariaLabel: string;
 }) {
-  const reduce = useReducedMotion();
+
   return (
     <div
       role="tablist"
